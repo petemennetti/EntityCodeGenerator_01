@@ -39,6 +39,7 @@
             label4 = new Label();
             label5 = new Label();
             txtNameSpace = new TextBox();
+            txtCSCode = new TextBox();
             SuspendLayout();
             // 
             // btnGenerate
@@ -131,11 +132,21 @@
             txtNameSpace.Size = new Size(194, 23);
             txtNameSpace.TabIndex = 9;
             // 
+            // txtCSCode
+            // 
+            txtCSCode.Location = new Point(12, 159);
+            txtCSCode.Multiline = true;
+            txtCSCode.Name = "txtCSCode";
+            txtCSCode.ScrollBars = ScrollBars.Both;
+            txtCSCode.Size = new Size(1171, 449);
+            txtCSCode.TabIndex = 11;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1197, 155);
+            ClientSize = new Size(1197, 620);
+            Controls.Add(txtCSCode);
             Controls.Add(label5);
             Controls.Add(txtNameSpace);
             Controls.Add(label4);
@@ -147,6 +158,7 @@
             Controls.Add(txtDatabase);
             Controls.Add(txtServer);
             Controls.Add(btnGenerate);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "Form1";
             Text = "C# Entity Code Generator";
             Load += Form1_Load;
@@ -167,5 +179,6 @@
         private Label label4;
         private Label label5;
         private TextBox txtNameSpace;
+        private TextBox txtCSCode;
     }
 }

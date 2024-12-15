@@ -5,7 +5,7 @@ using System.Text;
 
 public class EntityFileGenerator
 {
-    public static void CreateEntityFile(string projectName, string server, string databaseName, string tableName, string outputPath)
+    public static string CreateEntityFile(string projectName, string server, string databaseName, string tableName, string outputPath)
     {
         // Construct the connection string.
         string connectionString = $"Server={server};Database={databaseName};Integrated Security=True;";
@@ -58,10 +58,12 @@ public class EntityFileGenerator
             // Write the generated class to a file.
             File.WriteAllText(outputPath, classContent.ToString());
             Console.WriteLine($"Entity class generated successfully: {outputPath}");
+            return classContent.ToString(); 
         }
         catch (Exception ex)
         {
-            Console.WriteLine($"Error generating entity file: {ex.Message}");
+            return ($"Error generating entity file: {ex.Message}");
+            
         }
     }
 
